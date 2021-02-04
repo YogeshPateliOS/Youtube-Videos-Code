@@ -1,0 +1,35 @@
+//
+//  SignupViewController.swift
+//  LoginUI
+//
+//  Created by Yogesh Patel on 26/01/21.
+//
+
+import UIKit
+
+class SignupViewController: UITableViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+    }
+    
+    @IBAction func btnLoginClicked(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UIScreen.main.bounds.height
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let tableViewHeight = self.tableView.frame.height
+        let contentHeight = self.tableView.contentSize.height
+        
+        let centeringInset = (tableViewHeight - contentHeight) / 2.0
+        let topInset = max(centeringInset, 0.0)
+        
+        self.tableView.contentInset = UIEdgeInsets(top: topInset, left: 0.0, bottom: 0.0, right: 0.0)
+    }
+}

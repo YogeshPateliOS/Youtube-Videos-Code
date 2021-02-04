@@ -26,6 +26,12 @@ class LoginTableViewController: UITableViewController {
         ValidationCode()
     }
     
+    @IBAction func btnSignupClicked(_ sender: UIButton) {
+        if let signupVC = self.storyboard?.instantiateViewController(identifier: "SignupViewController") as? SignupViewController{
+            self.navigationController?.pushViewController(signupVC, animated: true)
+        }
+    }
+    
 }
 
 extension LoginTableViewController{
