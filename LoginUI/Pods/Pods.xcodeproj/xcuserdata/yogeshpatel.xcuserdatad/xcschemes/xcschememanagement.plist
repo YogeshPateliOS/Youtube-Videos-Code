@@ -4,14 +4,14 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-LoginUI.xcscheme</key>
+		<key>IQKeyboardManagerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>TPKeyboardAvoiding.xcscheme</key>
+		<key>Pods-LoginUI.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

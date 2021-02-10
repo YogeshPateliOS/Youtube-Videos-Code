@@ -11,7 +11,7 @@
         <scene sceneID="c1h-Rx-tp4">
             <objects>
                 <tableViewController id="Hur-WT-FXS" customClass="LoginTableViewController" customModule="LoginUI" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xit-5V-cQv" customClass="TPKeyboardAvoidingTableView">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xit-5V-cQv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -180,7 +180,7 @@
         <scene sceneID="aYj-9O-BlX">
             <objects>
                 <tableViewController storyboardIdentifier="SignupViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wIT-A9-fNI" customClass="SignupViewController" customModule="LoginUI" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CzD-qU-jrY">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="always" bouncesZoom="NO" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CzD-qU-jrY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -194,21 +194,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="827"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0c2-gg-19s">
-                                                    <rect key="frame" x="85.5" y="60" width="241.5" height="127.5"/>
+                                                <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0c2-gg-19s">
+                                                    <rect key="frame" x="130.5" y="60" width="151.5" height="149.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="240" id="BDo-Jf-AxN"/>
-                                                        <constraint firstAttribute="height" constant="128" id="a1X-Rf-CvI"/>
+                                                        <constraint firstAttribute="width" constant="150" id="BDo-Jf-AxN"/>
+                                                        <constraint firstAttribute="height" constant="150" id="a1X-Rf-CvI"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="75"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaD-nL-qHl">
-                                                    <rect key="frame" x="30" y="218" width="149.5" height="25"/>
+                                                    <rect key="frame" x="30" y="240" width="149.5" height="25"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QdQ-T5-e9A">
-                                                    <rect key="frame" x="30" y="253" width="354" height="40"/>
+                                                    <rect key="frame" x="30" y="275" width="354" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="hvT-Vc-HDp"/>
                                                     </constraints>
@@ -216,36 +222,39 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLT-kc-uew">
-                                                    <rect key="frame" x="30" y="313" width="149.5" height="25"/>
+                                                    <rect key="frame" x="30" y="335" width="149.5" height="25"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LXw-k4-qn4">
-                                                    <rect key="frame" x="30" y="443" width="354" height="40"/>
+                                                    <rect key="frame" x="30" y="465" width="354" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AZr-5H-wiw">
-                                                    <rect key="frame" x="30" y="538" width="354" height="40"/>
+                                                    <rect key="frame" x="30" y="560" width="354" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Caa-gV-cLE">
-                                                    <rect key="frame" x="30" y="503" width="149.5" height="25"/>
+                                                    <rect key="frame" x="30" y="525" width="149.5" height="25"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ES6-RU-Vju">
-                                                    <rect key="frame" x="30" y="348" width="354" height="40"/>
+                                                    <rect key="frame" x="30" y="370" width="354" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTc-fW-sz3">
-                                                    <rect key="frame" x="173.5" y="608" width="67" height="37"/>
+                                                    <rect key="frame" x="173.5" y="630" width="67" height="37"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
                                                     <state key="normal" title="Sign up"/>
+                                                    <connections>
+                                                        <action selector="btnSignupClicked:" destination="wIT-A9-fNI" eventType="touchUpInside" id="5D0-EW-lGT"/>
+                                                    </connections>
                                                 </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YFw-cp-KKs" userLabel="Account">
                                                     <rect key="frame" x="79.5" y="780" width="255.5" height="37"/>
@@ -267,7 +276,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygb-13-Nuc">
-                                                    <rect key="frame" x="30" y="408" width="149.5" height="25"/>
+                                                    <rect key="frame" x="30" y="430" width="149.5" height="25"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -319,6 +328,13 @@
                             <outlet property="delegate" destination="wIT-A9-fNI" id="RJP-YN-QfW"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="imgProfile" destination="0c2-gg-19s" id="f6q-Ln-CXO"/>
+                        <outlet property="txtConPassword" destination="AZr-5H-wiw" id="ey2-GD-9dL"/>
+                        <outlet property="txtEmail" destination="ES6-RU-Vju" id="WhV-Iq-eJW"/>
+                        <outlet property="txtPassword" destination="LXw-k4-qn4" id="VOz-8S-2YZ"/>
+                        <outlet property="txtUsername" destination="QdQ-T5-e9A" id="ltV-q5-3cB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XYY-mc-TDT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
