@@ -6,14 +6,29 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class LoginTableViewController: UITableViewController {
     
+    @IBOutlet weak var btnFacebook: FBLoginButton!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let token = AccessToken.current,
+               !token.isExpired {
+               // User is logged in, do work such as go to next view controller.
+            let token = token.tokenString
+            
+            let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields": "id, email, first_name, last_name, picture, short_name, name, middle_name, name_format,age_range"], tokenString: token, version: nil, httpMethod: .get)
+            request.start { (connection, result, error) in
+                print("\(result)")
+            }
+        }else{
+            btnFacebook.permissions = ["public_profile", "email"]
+            btnFacebook.delegate = self
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,4 +86,21 @@ extension LoginTableViewController{
             }])
         }
     }
+}
+
+extension LoginTableViewController: LoginButtonDelegate{
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        let token = result?.token?.tokenString
+        
+        let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields": "id, email, first_name, last_name, picture, short_name, name, middle_name, name_format,age_range"], tokenString: token, version: nil, httpMethod: .get)
+        request.start { (connection, result, error) in
+            print("\(result)")
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+        print("Logout")
+    }
+    
+    
 }

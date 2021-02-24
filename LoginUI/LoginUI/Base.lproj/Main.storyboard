@@ -73,7 +73,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Fnh-G9-gem" userLabel="Social">
                                                     <rect key="frame" x="44.5" y="711" width="325" height="50"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cif-jY-8Mz">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cif-jY-8Mz" customClass="FBSDKLoginButton">
                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
                                                             <color key="backgroundColor" red="0.3117317557" green="0.4452032447" blue="0.64509463310000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
@@ -97,6 +97,7 @@
                                                     <constraints>
                                                         <constraint firstItem="U3B-xl-BJc" firstAttribute="height" secondItem="cif-jY-8Mz" secondAttribute="height" id="dLs-zl-HzH"/>
                                                         <constraint firstItem="U3B-xl-BJc" firstAttribute="width" secondItem="cif-jY-8Mz" secondAttribute="width" id="w65-sN-Jod"/>
+                                                        <constraint firstAttribute="height" constant="50" id="yoy-na-TSY"/>
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Bg4-el-o8I" userLabel="Account">
@@ -168,6 +169,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="VcG-xd-FcT"/>
                     <connections>
+                        <outlet property="btnFacebook" destination="cif-jY-8Mz" id="1U8-p6-8do"/>
                         <outlet property="txtEmail" destination="FFo-3y-SER" id="rLw-Fu-DD2"/>
                         <outlet property="txtPassword" destination="Z7H-Pa-pSd" id="G75-x3-JGd"/>
                     </connections>
