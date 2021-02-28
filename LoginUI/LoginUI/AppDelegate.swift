@@ -8,6 +8,8 @@
 import UIKit
 import IQKeyboardManagerSwift
 import FBSDKCoreKit
+import Firebase
+import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,7 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                    application,
                    didFinishLaunchingWithOptions: launchOptions
                )
-        
+        FirebaseApp.configure()
+        GIDSignIn.sharedInstance()?.clientID = "255115353609-0fe4hb120ffoeh1aplmptdp2dj3lo4mj.apps.googleusercontent.com"
         return true
     }
 
@@ -32,13 +35,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           open url: URL,
           options: [UIApplication.OpenURLOptionsKey : Any] = [:]
       ) -> Bool {
-
-          ApplicationDelegate.shared.application(
-              app,
-              open: url,
-              sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+        var flag: Bool = false
+          if ApplicationDelegate.shared.application(app, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+          ){
+            //URL Scheme Facebook
+            flag = ApplicationDelegate.shared.application(app, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
               annotation: options[UIApplication.OpenURLOptionsKey.annotation]
-          )
+            )
+          }else{
+            //URL Scheme Google
+            flag = GIDSignIn.sharedInstance().handle(url)
+          }
+        return flag
 
       }
     

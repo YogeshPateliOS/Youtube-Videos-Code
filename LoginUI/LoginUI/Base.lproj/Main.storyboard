@@ -92,6 +92,9 @@
                                                             <state key="normal" title="Google">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="btnGoogleTapped:" destination="Hur-WT-FXS" eventType="touchUpInside" id="HEh-6g-wrM"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>

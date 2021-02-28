@@ -6,7 +6,9 @@ target 'LoginUI' do
   use_frameworks!
   pod 'IQKeyboardManagerSwift'
   pod 'FBSDKLoginKit'
-
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
   # Pods for LoginUI
 
 end
