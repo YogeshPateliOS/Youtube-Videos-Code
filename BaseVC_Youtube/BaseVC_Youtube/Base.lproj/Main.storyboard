@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8lR-nq-hhg">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--BaseViewController-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BaseVC_Youtube" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1d-yp-XvM">
+                                <rect key="frame" x="171" y="668" width="72" height="30"/>
+                                <state key="normal" title="SecondVC"/>
+                                <connections>
+                                    <segue destination="6xa-dH-QGk" kind="show" id="YCh-wN-X8B"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4GO-9t-c8H">
+                                <rect key="frame" x="82" y="323" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="1UG-bD-aGt"/>
+                                    <constraint firstAttribute="height" constant="250" id="ZkQ-NH-DhA"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wzg-ru-00z">
+                                <rect key="frame" x="163" y="613" width="88" height="30"/>
+                                <state key="normal" title="Select Photo"/>
+                                <connections>
+                                    <action selector="btnSelectPhotoTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UFf-3e-1ow"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="r1d-yp-XvM" firstAttribute="top" secondItem="Wzg-ru-00z" secondAttribute="bottom" constant="25" id="2WK-Sy-TPe"/>
+                            <constraint firstItem="Wzg-ru-00z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BXi-7D-0JR"/>
+                            <constraint firstItem="r1d-yp-XvM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fTk-m8-Qn5"/>
+                            <constraint firstItem="Wzg-ru-00z" firstAttribute="top" secondItem="4GO-9t-c8H" secondAttribute="bottom" constant="40" id="iQ6-UI-SbR"/>
+                            <constraint firstItem="4GO-9t-c8H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lo2-d1-wXq"/>
+                            <constraint firstItem="4GO-9t-c8H" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tdW-MG-6Rh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="BaseViewController" id="SPb-t8-gh0"/>
+                    <connections>
+                        <outlet property="img" destination="4GO-9t-c8H" id="1uh-Hc-fTK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1010.144927536232" y="67.633928571428569"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="ImC-qB-UMF">
+            <objects>
+                <viewController id="6xa-dH-QGk" customClass="SecondViewController" customModule="BaseVC_Youtube" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="19r-Pa-j5z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="81J-aL-pV6">
+                                <rect key="frame" x="82" y="323" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="IIe-oB-LD2"/>
+                                    <constraint firstAttribute="height" constant="250" id="pu5-Y3-fY1"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AqW-Oj-6Lg">
+                                <rect key="frame" x="165" y="623" width="84" height="30"/>
+                                <state key="normal" title="SelectPhoto"/>
+                                <connections>
+                                    <action selector="btnSelectPhotoTapped:" destination="6xa-dH-QGk" eventType="touchUpInside" id="WUq-6A-664"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nqN-9C-eJX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AqW-Oj-6Lg" firstAttribute="centerX" secondItem="19r-Pa-j5z" secondAttribute="centerX" id="ErR-WR-fgH"/>
+                            <constraint firstItem="AqW-Oj-6Lg" firstAttribute="top" secondItem="81J-aL-pV6" secondAttribute="bottom" constant="50" id="VJE-41-4Ql"/>
+                            <constraint firstItem="81J-aL-pV6" firstAttribute="centerY" secondItem="19r-Pa-j5z" secondAttribute="centerY" id="sWx-xx-tMj"/>
+                            <constraint firstItem="81J-aL-pV6" firstAttribute="centerX" secondItem="19r-Pa-j5z" secondAttribute="centerX" id="yMS-p7-7e6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JUl-0z-YOI"/>
+                    <connections>
+                        <outlet property="img" destination="81J-aL-pV6" id="eAh-25-kwd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i4h-Xz-Fs0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1630.4347826086957" y="65.625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yx3-2e-2Mc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8lR-nq-hhg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eFw-Ht-RQn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="N07-bP-Wk1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8GS-3Q-UlX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100.00000000000001" y="67.633928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
